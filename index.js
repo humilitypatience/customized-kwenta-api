@@ -3,9 +3,8 @@ const cors = require("cors");
 let app = express()
 const { wei } = require('@synthetixio/wei')
 const fundingRate = require('./fundingrate')
-let router = express.Router()
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 app.use(cors());
 
