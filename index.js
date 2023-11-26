@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 4000
 app.use(cors());
 
 app.get('/markets', (req, res) => {
+	console.log("markets data was invoked")
   const marketData = [{
 		version: 2,
 		marketAddress: 'custome_market_address',
