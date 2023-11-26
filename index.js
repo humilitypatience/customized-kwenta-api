@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 4000
 app.use(cors());
 
 app.get('/markets', (req, res) => {
-	console.log("markets data was invoked")
   const marketData = [{
 		version: 2,
 		marketAddress: 'custome_market_address',
@@ -61,6 +60,52 @@ app.get('/markets', (req, res) => {
 
 app.get('/marketFundingRatesHistory', (req, res) => {
   return res.json(fundingRate)
+})
+
+app.get('/prices', (req, res) => {
+	const priceData = [
+		{
+			synth: "The First Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The Second Synth",
+			rate: wei(20000)
+		},
+		{
+			synth: "The Third Synth",
+			rate: wei(30000)
+		},
+		{
+			synth: "The Fourth Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The Fifth Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The Sixth Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The Seventh Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The eighth Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The ninth Synth",
+			rate: wei(10000)
+		},
+		{
+			synth: "The tenth Synth",
+			rate: wei(10000)
+		},
+	]
+	return res.json(priceData)
 })
 
 app.listen(PORT, () => {
